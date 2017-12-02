@@ -1,0 +1,54 @@
+$width:12px;
+$height:24px;
+
+
+@mixin color($color){
+	background:$color;
+	&:before {
+		border-color:transparent $color $color transparent;
+	}
+	&:after {
+		border-color:$color transparent transparent $color;
+	}
+}
+@mixin triangle(){
+	content:'';
+	display:block;
+	position:absolute;
+	top:0;
+	width:0;
+	height:0;
+	border-width: $height/2 $width/2;
+	border-style:solid;
+}
+
+
+body {
+	margin:0;
+	padding:0;
+	.nav {
+		margin:100px auto;
+		ul {
+			list-style:none;
+			.item {
+				position:relative;
+				display:inline-block;
+				padding:0 10px;
+				height:$height;
+				line-height:$height;
+				text-align:center;
+				margin-left:$width;
+				color:#fff;
+				&:after {
+					@include triangle();
+					right:-$width;
+				}
+				&:before {
+					@include triangle();
+					left:-$width;
+				}
+				@include color(#00f);
+			}
+		}
+	}
+}

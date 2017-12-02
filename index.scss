@@ -1,0 +1,27 @@
+$width:12px;
+$height:24px;
+
+body {
+	margin:0;
+	padding:0;
+	.nav {
+		margin:100px auto;
+		ul {
+			list-style:none;
+			.item {
+				display:inline-block;
+				padding:0 10px;
+				height:$height;
+				line-height:$height;
+				text-align:center;
+				margin-left:10;
+				color:#fff;
+				transform:skew(-20deg);
+				background:#00f;
+				div.text {
+					transform:skew(20deg);
+				}
+			}
+		}
+	}
+}
